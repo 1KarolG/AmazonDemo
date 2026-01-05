@@ -1,0 +1,33 @@
+{
+  "name": "amazondemo",
+  "version": "1.0.0",
+  "description": "Amazon Demo for recruitment process",
+  "homepage": "https://github.com/1KarolG/AmazonDemo#readme",
+  "bugs": {
+    "url": "https://github.com/1KarolG/AmazonDemo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1KarolG/AmazonDemo.git"
+  },
+  "license": "ISC",
+  "author": "Karol Goralczyk",
+  "type": "commonjs",
+  "main": "index.ts",
+  "scripts": {
+    "test": "cypress run --headed",
+    "open": "cypress open",
+    "cy:run": "cypress run --headless --browser electron",
+    "merge:reports": "mochawesome-merge cypress/results/*.json -o cypress/results/report.json",
+    "generate:report": "marge cypress/results/report.json -o cypress/reports -i",
+    "tests": "npm run cy:run || npm run merge:reports && npm run generate:report"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "cypress": "^15.7.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0",
+    "mochawesome-report-generator": "^6.3.2",
+    "typescript": "^5.9.3"
+  }
+}
